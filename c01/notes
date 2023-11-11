@@ -1,0 +1,23 @@
+pg10: "If a pure function is called multiple times with the same arguments, it must return the same result every time" This seems referentially transparent (const in gcc terminology) rather than pure. Can pure be used just to refer to a function that has no side effects? In the files example, the files could change between invocations of the line count functions. Using information defined outside of the function body and its arguments risks not being referentially transparent.
+
+pros/cons?
++ testability
++ composability
++ forced to think about division of labour
++ less state to keep in the programmer's mind
+
+state, state, state! This is one (somewhat objective?) reason to prefer a functional style if possible: it has less state for a programmer to keep track of whilst writing AND reading code!
+
+pg16: C++ notion of a pure function - see gcc attribute `pure` and `const`. A proper [[pure]] attribute was proposed in 2015:
+https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0078r0.pdf
+seems to be supported in Clang as well https://stackoverflow.com/questions/2798188/pure-const-function-attributes-in-different-compilers
+
+does `constexpr` basically provide a similar developer/compiler 'contract'?
+
+could also mention developments in lambdas in forthcoming C++ standard, facilitating recursive lambdas? C.f. examples in that thread.
+
+
+
+
+
+
