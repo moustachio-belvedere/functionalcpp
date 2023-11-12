@@ -1,0 +1,11 @@
+different definitions of `pure`: some are just 'no side effects', others include referential transparency
+
+sum implementation, better to leave implementation as an implementation detail! (E.g. may want to use pairwise summing in a later version.)
+
+interesting change in accumulate from C++20:
+acc = acc + *i(until C++20)acc = std::move(acc) + *i(since C++20)
+
+pg 27:
+"This is a higher order function that abstracts the process of iterating over *recursive* data structures such as vectors, lists, trees"
+
+Are vectors recursive data structures? I don't think so. They can be treated algorithmically in a recursive way but it seems a stretch to call them recursive data structures.
