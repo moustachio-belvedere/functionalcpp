@@ -9,3 +9,14 @@ pg 27:
 "This is a higher order function that abstracts the process of iterating over *recursive* data structures such as vectors, lists, trees"
 
 Are vectors recursive data structures? I don't think so. They can be treated algorithmically in a recursive way but it seems a stretch to call them recursive data structures.
+
+lfold vs rfold?
+foldl stacks parentheses on the left : (((0+1)+2)+3)
+foldr stacks parentheses on the right: (1+(2+(3+0)))
+
+for eager (applicative mode) evaluation:
+foldl is tail recursive, foldr is recursive?
+
+for lazy (normal mode) evaluation:
+foldl is recursive, foldr is tail recursive?
+
