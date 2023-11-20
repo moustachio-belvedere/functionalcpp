@@ -1,0 +1,43 @@
+#include <cstdio>
+
+int ask() { return 2; }
+
+using funcptr = decltype(ask)*;
+
+struct c2f {
+    operator funcptr() const
+    {
+        return ask;
+    }
+};
+
+int main()
+{
+    auto  a1 = &ask;
+    auto& a2 = ask;
+    c2f   a3{};
+
+    printf("%d\n", a1());
+    printf("%d\n", a2());
+    printf("%d\n", a3());
+
+    return 0;
+}
+
+The c2f case uses the casting operator definition. What are the 'sneaky tricks' referred to in text that could be used to pass args?
+
+"These function objects have one advantage compared to the ordinary functions: each instance can have its own state..." is this an advantage? It's a power, but it comes with responsibility!
+
+Regarding the count_if example, std::bind might be a nice way to achieve it instead of an explicit class. Probably the same thing "under the hood"... maybe it will be discussed later. (Lambda also an option..)
+
+
+
+
+
+
+
+
+
+
+
+
