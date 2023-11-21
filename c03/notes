@@ -9,6 +9,16 @@ struct c2f {
     {
         return ask;
     }
+
+    operator() () const
+    {
+      return 3;
+    }
+
+    operator() (int x) const
+    {
+      return x + 5;
+    }
 };
 
 int main()
@@ -21,6 +31,23 @@ int main()
     printf("%d\n", a2());
     printf("%d\n", a3());
 
+    printf("me: %Le\n",
+    (long double)7.0/(long double)3.0 -
+    (long double)4.0/(long double)3.0 -
+    (long double)1.0);
+
+    printf("me: %e\n",
+    7.0/3.0 - 4.0/3.0 - 1.0);
+
+    printf("me: %e\n",
+    7.0f/3.0f - 4.0f/3.0f - 1.0f);
+
+/*
+me: -1.084202e-19
+me: 2.220446e-16
+me: -1.192093e-07
+*/
+
     return 0;
 }
 
@@ -30,14 +57,11 @@ The c2f case uses the casting operator definition. What are the 'sneaky tricks' 
 
 Regarding the count_if example, std::bind might be a nice way to achieve it instead of an explicit class. Probably the same thing "under the hood"... maybe it will be discussed later. (Lambda also an option..)
 
-
-
-
-
-
-
-
-
-
-
-
+"""
+The standard library provides a specialization of std::plus when T is not specified, which leaves the parameter types and return type to be deduced.
+plus<void>
+(C++14)
+	function object implementing x + y deducing argument and return types
+(class template specialization)
+"""
+does this happen with user defined types too?
