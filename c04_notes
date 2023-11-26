@@ -1,0 +1,14 @@
+in the currying API example, does this suggest a a heuristic to bear in mind when deciding the order of arguments in client facing APIs?
+
+shell utility tr?
+
+tr -cs A-Za-z '\n' |
+   tr A-Z a-z      |
+   sort            |
+   uniq -c         |
+   sort -rn        |
+   sed ${1}q
+
+the imperative vs functional verbosity comparison seems unfair as it doesn't consider the amount of code used to generate each of those unix utilities.
+
+
