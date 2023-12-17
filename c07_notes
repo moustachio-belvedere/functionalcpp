@@ -1,0 +1,4 @@
+Ranges remind me of SICP Stream Machines:
+https://www.youtube.com/watch?v=JkGKLILLy0I&t=2860s
+
+Having choice of views vs actions. Is it really a choice? Sort/unique fundamentally requires global knowledge of the collection and thus requires an action.
