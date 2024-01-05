@@ -1,1 +1,7 @@
 garbage collection and RAII? Not completely equivalent as implied by box?
+
+bitmapped vector trie is cool, any alternatives that achieve similar goals?
+
+red-black trees for a functional associative container sounds interesting too.
+
+
